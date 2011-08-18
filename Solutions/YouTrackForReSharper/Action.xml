@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<actions>
+  <insert group-id="ReSharper" position="last">
+    <action-group id="YouTrackGroup" text="YouTrack" shared="true">
+      <action id="YouTrackSearch" text="Search" image="YouTrack.For.ReSharper.youtrack-logo.png" shortcut="Control+Y"/>
+    </action-group>
+  </insert>
+</actions>
+

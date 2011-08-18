@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{10CEEC81-DFFA-40E2-B49F-D073A4488B04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YouTrack.For.ReSharper</RootNamespace>
+    <AssemblyName>YouTrack.For.ReSharper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v7.1">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\DevExpress.Data.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v7.1">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\DevExpress.Utils.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v7.1">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\DevExpress.XtraEditors.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v7.1">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\DevExpress.XtraTreeList.v7.1.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyHttp">
+      <HintPath>..\packages\EasyHttp.1.0.7\lib\EasyHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.ActionManagement">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.ActionManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.IDE">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.IDE.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.ProjectModel">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.ProjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.Shell">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.UI">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.Util">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.ReSharper.Features.Common">
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.ReSharper.Features.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="JsonFx">
+      <HintPath>..\packages\JsonFx.2.0.1106.2610\lib\net40\JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.2.9.2.2\lib\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.2\lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.XML" />
+    <Reference Include="YouTrackSharp">
+      <HintPath>..\packages\YouTrackSharp.1.0.12\lib\net40\YouTrackSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Browser\YouTrackIssuePresenter.cs" />
+    <Compile Include="Browser\YouTrackIssueView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Browser\YouTrackTreeModelPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Browser\YouTrackTreeViewController.cs" />
+    <Compile Include="Infrastructure\Options\YouTrackPowerToyOptionsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Options\YouTrackPowerToyOptionsPage.Designer.cs">
+      <DependentUpon>YouTrackPowerToyOptionsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Options\YouTrackSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\Options\YouTrackSettingsControl.Designer.cs">
+      <DependentUpon>YouTrackSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\YouTrackServer.cs" />
+    <Compile Include="Infrastructure\YouTrackException.cs" />
+    <Compile Include="Infrastructure\YouTrackSettings.cs" />
+    <Compile Include="Infrastructure\YouTrackSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\YouTrackSettingsForm.Designer.cs">
+      <DependentUpon>YouTrackSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\YouTrackSolutionInitialization.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAction\IssueItem.cs" />
+    <Compile Include="SearchAction\IssueItemPriority.cs" />
+    <Compile Include="SearchAction\SearchBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchAction\SearchBox.Designer.cs">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchAction\YouTrackSearch.cs" />
+    <Compile Include="SearchAction\YouTrackSearchAction.cs" />
+    <Compile Include="SearchAction\YouTrackStatusPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Infrastructure\Options\YouTrackPowerToyOptionsPage.resx">
+      <DependentUpon>YouTrackPowerToyOptionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Infrastructure\Options\YouTrackSettingsControl.resx">
+      <DependentUpon>YouTrackSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Infrastructure\YouTrackSettingsForm.resx">
+      <DependentUpon>YouTrackSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchAction\SearchBox.resx">
+      <DependentUpon>SearchBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Action.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\youtrack-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\youtrack-logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\youtrack-icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\youtrack-root.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\issue-low-priority.png" />
+    <EmbeddedResource Include="Resources\issue-high-priority.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\youtrack-sample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
