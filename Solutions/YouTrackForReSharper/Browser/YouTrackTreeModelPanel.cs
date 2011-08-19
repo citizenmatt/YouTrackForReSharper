@@ -41,10 +41,10 @@
             return this.controller.Presenter;
         }
 
-        protected override IActionBar CreateActionBar(string actionId)
-        {
-            return ActionBarManager.Instance.CreateActionBar(actionId, this, true);
-        }
+        //protected override IActionBar CreateActionBar(string actionId)
+        //{
+        //    return ActionBarManager.Instance.CreateActionBar(actionId, this, true);
+        //}
 
         protected override TreeModelPresentableView CreateView(TreeModel model)
         {

@@ -4,7 +4,8 @@
 
     using System.Drawing;
 
-    using JetBrains.ComponentModel;
+    using JetBrains.Application.Components;
+    using JetBrains.Application.ComponentModel;
     using JetBrains.IDE.TreeBrowser;
     using JetBrains.ProjectModel;
     using JetBrains.UI.Controls;
@@ -13,8 +14,8 @@
     using YouTrack.For.ReSharper.SearchAction;
 
     #endregion
-
-    [SolutionComponentImplementation(ProgramConfigurations.VS_ADDIN)]
+    
+    [SolutionComponent(ProgramConfigurations.VS_ADDIN)]
     public class YouTrackSolutionInitialization : ISolutionComponent
     {
         private readonly ISolution solution;

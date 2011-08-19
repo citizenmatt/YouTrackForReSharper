@@ -5,10 +5,12 @@
     using System.Windows.Forms;
 
     using JetBrains.ActionManagement;
-    using JetBrains.IDE;
+    using JetBrains.Application.DataContext;
 
     using YouTrack.For.ReSharper.Infrastructure;
     using YouTrack.For.ReSharper.Properties;
+
+    using DataConstants = JetBrains.IDE.DataConstants;
 
     #endregion
 

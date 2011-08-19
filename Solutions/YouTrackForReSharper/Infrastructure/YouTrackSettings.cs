@@ -2,7 +2,6 @@
 {
     #region Using Directives
 
-    using JetBrains.Application;
     using JetBrains.ProjectModel;
     using JetBrains.Util;
 
@@ -49,8 +48,8 @@
             SolutionSettingsTable.GetInstance(this.solution).SetBoolean("YouTrackUseSSL", this.UseSSL);
             SolutionSettingsTable.GetInstance(this.solution).SetString("YouTrackProject", this.Project);
 
-            GlobalSettingsTable.Instance.SetString("YouTrackUsername", this.Username);
-            GlobalSettingsTable.Instance.SetEncryptedString("YouTrackPassword", this.Password);
+            SolutionSettingsTable.GetInstance(this.solution).SetString("YouTrackUsername", this.Username);
+            SolutionSettingsTable.GetInstance(this.solution).SetEncryptedString("YouTrackPassword", this.Password);
         }
 
         private void Load()
@@ -61,8 +60,8 @@
             this.Project = SolutionSettingsTable.GetInstance(this.solution).GetString("YouTrackProject");
             this.PriorityBarrier = SolutionSettingsTable.GetInstance(this.solution).GetInteger("YouTrackPriorityBarrier", 2);
 
-            this.Username = GlobalSettingsTable.Instance.GetString("YouTrackUsername");
-            this.Password = GlobalSettingsTable.Instance.GetEncryptedString("YouTrackPassword");
+            this.Username = SolutionSettingsTable.GetInstance(this.solution).GetString("YouTrackUsername");
+            this.Password = SolutionSettingsTable.GetInstance(this.solution).GetEncryptedString("YouTrackPassword");
         }
     }
 }

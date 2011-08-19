@@ -3,6 +3,7 @@
     #region Using Directives
 
     using JetBrains.CommonControls;
+    using JetBrains.DataFlow;
     using JetBrains.IDE.TreeBrowser;
     using JetBrains.ProjectModel;
     using JetBrains.TreeModels;
@@ -28,10 +29,11 @@
             get { return this.solution;  }
         }
 
-        public override string Title
-        {
-            get { return "YouTrack"; }
-        }
+        //todo how does one set the title now -plt
+        //public override string Title
+        //{
+        //    get { return "YouTrack"; }
+        //}
 
         public override TreeModel Model
         {

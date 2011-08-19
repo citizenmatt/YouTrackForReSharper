@@ -1,11 +1,10 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using JetBrains.ActionManagement;
-using JetBrains.ComponentModel;
+using JetBrains.Application.Components;
+using JetBrains.Application.PluginSupport;
 using JetBrains.UI;
-using JetBrains.UI.Application.PluginSupport;
-using JetBrains.WindowManagement;
+using JetBrains.UI.ToolWindowManagement;
 
 using YouTrack.For.ReSharper.SearchAction;
 
@@ -30,7 +29,7 @@ using YouTrack.For.ReSharper.SearchAction;
   Id = YouTrackSearchAction.YouTrackBrowserWindowId,
   Text = "Hierarchy",
   Guid = "66DDC50A-E1B3-47DC-83B8-8F8813B81FF4",
-  ToolWindowVisibilityPersistenceScope = ToolWindowVisibilityPersistenceScope.SOLUTION,
+  //ToolWindowVisibilityPersistenceScope = ToolWindowVisibilityPersistenceScope.Solution,
   IconResourceID = 305)]
 
 [assembly: ImagesBase("YouTrack.For.ReSharper.Resources")]
