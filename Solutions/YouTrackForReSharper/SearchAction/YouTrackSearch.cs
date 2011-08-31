@@ -1,4 +1,7 @@
-﻿namespace YouTrack.For.ReSharper.SearchAction
+﻿using JetBrains.DataFlow;
+using JetBrains.UI.ToolWindowManagement;
+
+namespace YouTrack.For.ReSharper.SearchAction
 {
     #region Using Directives
 
@@ -18,13 +21,16 @@
 
     #endregion
 
+    [SolutionComponent]
     public class YouTrackSearch
     {
+        readonly Lifetime _lifetime;
         private readonly ISolution solution;
         private readonly YouTrackServer youTrackServer;
 
-        public YouTrackSearch(ISolution solution, YouTrackServer youTrackServer)
+        public YouTrackSearch(Lifetime lifetime, ISolution solution, YouTrackServer youTrackServer)
         {
+            _lifetime = lifetime;
             this.solution = solution;
             this.youTrackServer = youTrackServer;
         }
@@ -33,7 +39,7 @@
         {
             using (var searchBox = new SearchBox())
             {
-                if (searchBox.ShowDialog(UIApplicationShell.Instance.MainWindow) == DialogResult.OK)
+                if (searchBox.ShowDialog(solution.GetComponent<IMainWindow>()) == DialogResult.OK)
                 {
                     IEnumerable<Issue> issues = null;
 
@@ -49,9 +55,12 @@
 
                     var controller = new YouTrackTreeViewController(this.solution, model);
                     var browserPanel = new YouTrackTreeModelPanel(controller);
-                    var browser = TreeModelBrowser.GetInstance(this.solution);
-
-                    browser.Show(YouTrackSearchAction.YouTrackBrowserWindowId, controller, browserPanel);
+                    var toolWindowManager = solution.GetComponent<ToolWindowManager>();
+                    var descriptor = solution.GetComponent<YouTrackToolWindowDescriptor>();
+                    var toolWindowClass = toolWindowManager.Classes[descriptor];
+                    var toolWindowInstance = toolWindowClass.RegisterInstance(_lifetime, "EMPTY TITLE", null, (lifetime, instance) => browserPanel);
+                    toolWindowInstance.Lifetime.AddAction(() => browserPanel.Dispose());
+                    toolWindowInstance.EnsureControlCreated().Show();
                 }
             }
         }

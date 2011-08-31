@@ -22,23 +22,22 @@
         
         private const string OptionId = "YouTrackPowerToy-35C1F372-1A77-428D-8074-7CFBBA865A04";
 
-        public YouTrackPowerToyOptionsPage(IOptionsDialog optionsDialog)
+        public YouTrackPowerToyOptionsPage(IOptionsDialog optionsDialog, ISolution solution)
         {
-            this.solution = optionsDialog.DataContext.GetData(DataConstants.SOLUTION);
+            this.solution = solution;
 
             if (this.solution != null)
             {
                 InitializeComponent();
-
-                this.youTrackSettings = new YouTrackSettings(this.solution);
-
+                this.youTrackSettings = solution.GetComponent<YouTrackSettings>();
                 this.youTrackSettingsControl = new YouTrackSettingsControl(this.youTrackSettings);
 
                 this.Controls.Add(this.youTrackSettingsControl);
             }
-            else 
+            else
             {
-                Controls.Add(new RichTextLabel("You need to have an open solution to access these settings"));
+                Controls.Add(JetBrains.UI.Options.Helpers.Controls.CreateNoSolutionCueBanner());
+                //Controls.Add(new RichTextLabel("You need to have an open solution to access these settings"));
             }
         }
 

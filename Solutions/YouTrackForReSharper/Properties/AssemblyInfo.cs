@@ -24,12 +24,5 @@ using YouTrack.For.ReSharper.SearchAction;
 [assembly: PluginVendor("JetBrains s.r.o.")]
 [assembly: PluginDescription("Search using YouTrack")]
 [assembly: ActionsXml("YouTrack.For.ReSharper.Action.xml")]
-[assembly: ToolWindowDescriptor(
-  ProgramConfigurations.VS_ADDIN,
-  Id = YouTrackSearchAction.YouTrackBrowserWindowId,
-  Text = "Hierarchy",
-  Guid = "66DDC50A-E1B3-47DC-83B8-8F8813B81FF4",
-  //ToolWindowVisibilityPersistenceScope = ToolWindowVisibilityPersistenceScope.Solution,
-  IconResourceID = 305)]
 
 [assembly: ImagesBase("YouTrack.For.ReSharper.Resources")]

@@ -1,4 +1,6 @@
-﻿namespace YouTrack.For.ReSharper.SearchAction
+﻿using JetBrains.ProjectModel;
+
+namespace YouTrack.For.ReSharper.SearchAction
 {
     #region Using Directives
 
@@ -22,12 +24,12 @@
         public bool Update(IDataContext context, ActionPresentation presentation, DelegateUpdate nextUpdate)
         {
             // It's always allowed. We don't need a solution present
-            return context.CheckAllNotNull(DataConstants.SOLUTION);
+            return context.CheckAllNotNull(JetBrains.ProjectModel.DataContext.DataConstants.SOLUTION);
         }
 
         public void Execute(IDataContext context, DelegateExecute nextExecute)
         {
-            var solution = context.GetData(DataConstants.SOLUTION);
+            var solution = context.GetData(JetBrains.ProjectModel.DataContext.DataConstants.SOLUTION);
 
 
             if (solution == null)
@@ -40,14 +42,7 @@
             }
             else
             {
-                var youTrackSettings = new YouTrackSettings(solution);
-
-                this.ValidateYouTrackSettings(youTrackSettings);
-
-                var connection = new YouTrackServer(youTrackSettings);
-
-                var youTrackSearch = new YouTrackSearch(solution, connection);
-
+                var youTrackSearch = solution.GetComponent<YouTrackSearch>();
                 youTrackSearch.Search();
             }
         }

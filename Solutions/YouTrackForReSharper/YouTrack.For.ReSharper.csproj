@@ -51,7 +51,7 @@
       <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.ActionManagement.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Platform.ReSharper.ComponentModel">
-      <HintPath>..\..\..\..\..\Program Files (x86)\JetBrains\ReSharper\v6.0\Bin\JetBrains.Platform.ReSharper.ComponentModel.dll</HintPath>
+      <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.ComponentModel.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Platform.ReSharper.IDE">
       <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.IDE.dll</HintPath>
@@ -77,6 +77,8 @@
     <Reference Include="Lucene.Net">
       <HintPath>..\packages\Lucene.2.9.2.2\lib\Lucene.Net.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.2\lib\StructureMap.dll</HintPath>
     </Reference>
@@ -85,7 +87,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
     <Reference Include="YouTrackSharp">
       <HintPath>..\packages\YouTrackSharp.1.0.12\lib\net40\YouTrackSharp.dll</HintPath>
     </Reference>
@@ -140,6 +144,7 @@
     <Compile Include="SearchAction\YouTrackStatusPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="YouTrackToolWindowDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Infrastructure\Options\YouTrackPowerToyOptionsPage.resx">

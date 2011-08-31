@@ -1,4 +1,6 @@
-﻿namespace YouTrack.For.ReSharper.Infrastructure
+﻿using JetBrains.ProjectModel;
+
+namespace YouTrack.For.ReSharper.Infrastructure
 {
     #region Using Directives
 
@@ -11,6 +13,7 @@
 
     #endregion
 
+    [SolutionComponent]
     public class YouTrackServer
     {
         private readonly YouTrackSettings youTrackSettings;

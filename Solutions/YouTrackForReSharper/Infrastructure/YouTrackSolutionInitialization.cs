@@ -16,7 +16,7 @@
     #endregion
     
     [SolutionComponent(ProgramConfigurations.VS_ADDIN)]
-    public class YouTrackSolutionInitialization : ISolutionComponent
+    public class YouTrackSolutionInitialization 
     {
         private readonly ISolution solution;
 
@@ -27,10 +27,10 @@
 
         public void AfterSolutionOpened()
         {
-            var emptyLabel = new RichTextLabel { BackColor = SystemColors.Control };
-            emptyLabel.RichTextBlock.Add(new RichText("YouTrack Search Results", new TextStyle(FontStyle.Bold)));
-            var browser1 = TreeModelBrowser.GetInstance(this.solution);
-            browser1.RegisterBrowserWindow(YouTrackSearchAction.YouTrackBrowserWindowId, emptyLabel);
+//            var emptyLabel = new RichTextLabel { BackColor = SystemColors.Control };
+//            emptyLabel.RichTextBlock.Add(new RichText("YouTrack Search Results", new TextStyle(FontStyle.Bold)));
+//            var browser1 = TreeModelBrowser.GetInstance(this.solution);
+//            browser1.RegisterBrowserWindow(YouTrackSearchAction.YouTrackBrowserWindowId, emptyLabel);
         }
 
         public void BeforeSolutionClosed()

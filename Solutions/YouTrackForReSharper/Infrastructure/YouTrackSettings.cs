@@ -9,6 +9,7 @@
 
     #endregion
 
+[SolutionComponent]
     public class YouTrackSettings
     {
         private readonly ISolution solution;
