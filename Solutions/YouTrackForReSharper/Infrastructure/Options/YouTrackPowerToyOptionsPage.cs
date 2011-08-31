@@ -8,6 +8,7 @@
     using JetBrains.ProjectModel;
     using JetBrains.ReSharper.Features.Common.Options;
     using JetBrains.UI.Controls;
+    using JetBrains.UI.CrossFramework;
     using JetBrains.UI.Options;
 
     #endregion
@@ -54,7 +55,7 @@
             return true;
         }
 
-        public Control Control
+        public EitherControl Control
         {
             get { return this; }
         }

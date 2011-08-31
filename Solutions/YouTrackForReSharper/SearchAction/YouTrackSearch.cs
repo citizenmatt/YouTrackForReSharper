@@ -96,7 +96,7 @@
 
             var issueManagement = new IssueManagement(connection);
 
-            return issueManagement.GetIssues(this.youTrackServer.Project);
+            return issueManagement.GetAllIssuesForProject(this.youTrackServer.Project);
         }
     }
 }

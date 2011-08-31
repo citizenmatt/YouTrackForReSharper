@@ -50,6 +50,9 @@
     <Reference Include="JetBrains.Platform.ReSharper.ActionManagement">
       <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.ActionManagement.dll</HintPath>
     </Reference>
+    <Reference Include="JetBrains.Platform.ReSharper.ComponentModel">
+      <HintPath>..\..\..\..\..\Program Files (x86)\JetBrains\ReSharper\v6.0\Bin\JetBrains.Platform.ReSharper.ComponentModel.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Platform.ReSharper.IDE">
       <HintPath>..\..\ReferencedAssemblies\ReSharper\JetBrains.Platform.ReSharper.IDE.dll</HintPath>
     </Reference>
