@@ -1,6 +1,5 @@
 bin/
 obj/
-Drops/
 _ReSharper.*
 *.csproj.user
 *.resharper.user
@@ -8,5 +7,6 @@ _ReSharper.*
 *.suo
 *.cache
 *.user
+*.dotcover
 ~$*
 
